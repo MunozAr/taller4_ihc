@@ -36,7 +36,38 @@
     <!-- modernizr css -->
     <script src="peliculas_files/modernizr-2.8.3.min.js"></script>
 </head>
+
+
 <body class="home-2">
+        <style>
+                .estiloInput{
+                    margin-top: 10px;
+                }
+                .btnIngresarMonto{
+            background-color: transparent;
+            border: 1px solid #232323;
+            color: red;
+            font-size: 14px;
+            font-family: 'Numans', sans-serif;
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 25px;
+            transition: 0.4s all;
+            outline: none;
+        }
+        .btnIngresarMonto:hover{
+            background-color: red;
+            border: 1px solid #232323;
+            color: white;
+            font-size: 14px;
+            font-family: 'Numans', sans-serif;
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 25px;
+            transition: 0.4s all;
+            outline: none;
+        }
+            </style>
 <!--[if lt IE 8]>
 
 <![endif]-->
@@ -162,6 +193,59 @@
     </div>
     <!-- mobile-menu-area-end -->
 </header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Seleccione las películas a entregar</h1>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6" style="margin-top: 25px;">
+            <div class="col-12 estiloInput">
+                Película 1 <input  type="checkbox" name="pelicula1" id="peli1"> x 2 días
+            </div>
+            <div class="col-12 estiloInput">
+                Película 2 <input  type="checkbox" name="pelicula1" id="peli1"> x 1 día
+            </div>
+            <div class="col-12 estiloInput">
+                Película 3 <input  type="checkbox" name="pelicula1" id="peli1"> x 5 días
+            </div>
+            <div class="col-12 estiloInput">
+                Película 4 <input  type="checkbox" name="pelicula1" id="peli1"> x 3 días
+            </div>
+            <div class="col-12 estiloInput">
+                Película 5 <input  type="checkbox" name="pelicula1" id="peli1"> x 2 días
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6" text-center>
+           <button class="btnIngresarMonto">Devolver Libros</button>
+        </div>
+        <div class="col-12" style="margin-top: 25px">
+            <h3 >
+                Cuenta Total
+            </h3>
+            <h4>120 soles</h4>
+        </div>
+    </div>
+</div>
+
+<div id="Modalconfirmacion" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Películas devueltas correctamente</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>¡Muchas gracias por confiar en nosotros!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+</div>
 <!-- header-area-end -->
 <!-- featured-area-start -->
 
@@ -193,5 +277,12 @@
 <script src="js/plugins.js"></script>
 <!-- main js -->
 <script src="js/main.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.btnIngresarMonto').click(function(){
+            $('#Modalconfirmacion').modal('show');
+        });
+    });
+</script>
 </body>
 </html>
